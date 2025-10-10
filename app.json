@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "QVAC PoC",
+    "slug": "qvac-poc",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "qvac-poc",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "xyz.simonesposo.poc",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "This app needs access to the microphone for voice recording and transcription features.",
+        "NSCameraUsageDescription": "This app needs access to the camera to take photos for image analysis.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select images for analysis."
+      }
+    },
+    "android": {
+      "edgeToEdgeEnabled": true,
+      "package": "xyz.simonesposo.poc",
+      "permissions": [
+        "RECORD_AUDIO",
+        "MODIFY_AUDIO_SETTINGS",
+        "CAMERA"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "@tetherto/qvac-sdk/expo-plugin",
+      "expo-router",
+      "react-native-vision-camera",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#000000"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "prebuild": {
+      "clean": false
+    }
+  }
+}
